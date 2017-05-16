@@ -3,11 +3,15 @@ require "zr_watermark/version"
 module ZrWatermark
   # Your code goes here...
   class CLI
+    def self.bin
+      File.join File.dirname(__dir__), 'bin'
+    end
+
     def self.excutable
       if RUBY_PLATFORM.match(/darwin/)
-        Gem.bin_path('zr_watermark', 'watermark')
+        File.join(bin, 'watermark')
       else
-        Gem.bin_path('zr_watermark', 'watermark_linux')
+        File.join(bin, 'watermark_linux')
       end
     end
   end
