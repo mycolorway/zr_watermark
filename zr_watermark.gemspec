@@ -26,9 +26,12 @@ Gem::Specification.new do |spec|
     f.match(%r{^(test|spec|features)/})
   end
   spec.bindir        = "bin"
-  # spec.executables   = ["watermark", "watermark_linux"]
+  spec.executables   = ["watermark"]
   spec.require_paths = ["lib"]
+
+  spec.add_dependency "ruby-progressbar", "~> 1.8.1"
 
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "byebug", "~> 9.0.6"
 end
