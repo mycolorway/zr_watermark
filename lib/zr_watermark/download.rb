@@ -19,6 +19,7 @@ module ZrWatermark
            saved_file.write(read_file.read)
          end
        end
+       %x[chmod +x #{save_to}]
     end
   end
 
