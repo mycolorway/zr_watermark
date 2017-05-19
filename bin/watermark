@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require 'zr_watermark'
+path = ZrWatermark::CLI.executable
+
+%x[
+if [ -x "#{path}" ]
+then
+  #{path} #{ARGV.join(" ")}
+else
+  chmod +x #{path}
+  #{path} #{ARGV.join(" ")}
+fi
+]
+
+
