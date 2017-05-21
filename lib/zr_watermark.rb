@@ -10,7 +10,7 @@ module ZrWatermark
     end
 
     def bin(file_name)
-      File.join File.dirname(__dir__), "exe/#{file_name}"
+      File.join File.dirname(__dir__), "lib/bin/#{file_name}"
     end
 
     def executable
