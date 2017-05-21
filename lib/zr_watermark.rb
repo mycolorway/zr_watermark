@@ -10,7 +10,10 @@ module ZrWatermark
     end
 
     def bin(file_name)
-      File.join File.dirname(__dir__), "lib/bin/#{file_name}"
+      dir = File.join File.dirname(__dir__), "lib/bin"
+      FileUtils.mkdir(dir) unless Dir.exist?
+      File.join(dir, file_name)
+      end
     end
 
     def executable
